@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,5 +42,8 @@ Route::middleware('auth')->group(function (){
     Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
     Route::put('/category/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::post('/category/delete/{id}',[CategoryController::class, 'destroy'])->name('category.destroy');
+
+    Route::get ('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get ('/user/create', [UserController::class, 'create'])->name('user.create');
 });
 

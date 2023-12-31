@@ -59,6 +59,19 @@
                                 </p>
                             </a>
                         </li>
+                        @if (Auth::user()->name == '1')
+<li class="nav-item">
+                            <a href="{{ route('user.index') }}"
+                                class="nav-link {{ $judul == 'User' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    User
+                                    {{-- <span class="right badge badge-danger">New</span> --}}
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
